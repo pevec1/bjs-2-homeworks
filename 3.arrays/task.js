@@ -3,8 +3,10 @@ function compareArrays(arr1, arr2) {
 }
 
 function getUsersNamesInAgeRange(users, gender) {
-    return users.filter((users) => gender === users.gender).map(users => users.age).reduce((acc, item) => acc + item, 0) / users.filter((users) => gender === users.gender).map(users => users.gender).reduce((acc, item, index) => {
-        return Math.max(index) + 1
-    }, 1);
-
+    return users.filter((users) => gender === users.gender).map(users => users.age).reduce((acc, item, index, arr) => acc + item / arr.length, 0);
 }
+
+/*  / users.filter((users) => gender === users.gender).map(users => users.gender).reduce((acc, item, index) => {
+  return Math.max(index) + 1
+}, 1);
+*/
