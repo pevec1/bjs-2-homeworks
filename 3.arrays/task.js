@@ -1,16 +1,10 @@
 function compareArrays(arr1, arr2) {
-    let l = false;
-    if (arr1.length === arr2.length) {
-        l = true;
-    } else if (arr1.length < arr2.length) {
-        l = false;
-    } else if (arr1.length > arr2.length) {
-        l = false;
-    }
-
-    return l && arr1.every((elem, index) => elem == arr2[index]);
+    return (arr1.length === arr2.length) && arr1.every((elem, index) => elem == arr2[index]);
 }
 
 function getUsersNamesInAgeRange(users, gender) {
+    return users.filter((users) => gender === users.gender).map(users => users.age).reduce((acc, item) => acc + item, 0) / users.filter((users) => gender === users.gender).map(users => users.gender).reduce((acc, item, index) => {
+        return Math.max(index) + 1
+    }, 1);
 
 }
