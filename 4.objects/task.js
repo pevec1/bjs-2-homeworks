@@ -27,17 +27,16 @@ Student.prototype.getAverage = function() {
         l = this.marks.length
     }
     if (l === 0) {
-        return this.average = 0
+        return 0
     }
     for (let i = 0; i < l; i++) {
         sum = sum + Number(this.marks[i]);
     }
-    return this.average = sum / l
+    return sum / l
 }
 
 Student.prototype.exclude = function(reason) {
     delete this.subject
     delete this.marks
-    delete this.average
     return this.excluded = reason
 }
