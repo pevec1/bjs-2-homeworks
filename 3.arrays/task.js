@@ -9,4 +9,10 @@ function getUsersNamesInAgeRange(users, gender) {
 /*  / users.filter((users) => gender === users.gender).map(users => users.gender).reduce((acc, item, index) => {
   return Math.max(index) + 1
 }, 1);
+
+function getUsersNamesInAgeRange(users, gender) {
+  
+   return users.filter((usersPeople) => gender === usersPeople.gender).map(userAge => userAge.age).reduce((acc, item, index, userAge) => acc + item/userAge.length,0)
+}
+
 */
