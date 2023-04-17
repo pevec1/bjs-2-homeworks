@@ -108,7 +108,7 @@ class Library extends Book {
 
 class Student {
   constructor (name, gender, age) {
-    ;(this.name = name),
+    (this.name = name),
       (this.gender = gender),
       (this.age = age),
       (this.marks = {})
