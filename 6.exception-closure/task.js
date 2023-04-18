@@ -37,5 +37,22 @@ class Triangle{
     }
    
 }
-// let trio = new Triangle(2,5,5)
-// alert (trio.perimeter)
+
+function getTriangle(a, b, c) {
+  let d 
+  try {
+    d= new Triangle(a, b, c);
+    return d;
+  } catch (error) {
+    return {
+      get perimeter() {
+        return "Ошибка! Треугольник не существует";
+      },
+      get area() {
+        return "Ошибка! Треугольник не существует";
+      }
+    }    
+  }
+}
+//let trio = new Triangle(1,3,100)
+//alert (trio.perimeter())
