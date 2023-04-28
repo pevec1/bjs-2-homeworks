@@ -108,13 +108,13 @@ class Library extends Book {
 
 class Student {
   constructor (name, gender, age) {
-    (this.name = name),
-      (this.gender = gender),
-      (this.age = age),
-      (this.marks = {})
+    this.name = name
+    this.gender = gender
+    this.age = age
+    this.marks = {}
   }
   setSubject (subjectName) {
-    return (this.subject = subjectName)
+    return subjectName
   }
   addMark (mark, subjectName) {
     if (this.marks !== undefined) {
@@ -149,18 +149,18 @@ class Student {
     }
   }
   getAverage () {
-    let l = 0,
+    let quantity = 0,
       sum = 0
     let arr = []
     arr = Object.keys(this.marks)
     for (let i = 0; i < arr.length; i++) {
-      l += arr.length
+      quantity += arr.length
       sum += this.marks[arr[i]].reduce((acc, item, index, arr) => acc + item, 0)
     }
-    if (l === 0) {
+    if (quantity === 0) {
       return 0
     } else {
-      return sum / l
+      return sum / quantity
     }
   }
 }
